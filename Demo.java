@@ -12,3 +12,14 @@ public class Demo{
         System.out.println(sum);
     }
 }
+
+class findEven{
+    public static void main(String[] args){
+        int num=8;
+        if(num%2==0){
+            System.out.println("it is even number");
+        }else{
+            System.out.println("it is odd number");
+        }
+    }
+}
