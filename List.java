@@ -17,5 +17,9 @@ public class List {
         }
         numbers[size++] = item;
     }
+
+    public int size() {
+        return size;
+    }
 }
 
