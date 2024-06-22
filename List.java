@@ -39,5 +39,21 @@ public class List {
         }
         return numbers[index];
     }
+
+    public String toString() {
+        if (size == 0) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < size; i++) {
+            sb.append(numbers[i]);
+            if (i < size - 1) {
+                sb.append(",");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
 
