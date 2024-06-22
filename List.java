@@ -7,5 +7,15 @@ public class List {
         numbers = new int[10];
         size = 0;
     }
+
+    public void add(int item) {
+        if (size == numbers.length) {
+            int num = numbers.length * 2;
+            int[] newNumbers = new int[num];
+            System.arraycopy(numbers, 0, newNumbers, 0, numbers.length);
+            numbers = newNumbers;
+        }
+        numbers[size++] = item;
+    }
 }
 
