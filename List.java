@@ -64,5 +64,14 @@ public class List {
         }
         return false;
     }
+
+    public int indexOf(int item) {
+        for (int i = 0; i < size; i++) {
+            if (numbers[i] == item) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
 
