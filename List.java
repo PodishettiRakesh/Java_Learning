@@ -21,5 +21,16 @@ public class List {
     public int size() {
         return size;
     }
+
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            System.out.println("Invalid index");
+            return;
+        }
+        for (int i = index; i < size - 1; i++) {
+            numbers[i] = numbers[i + 1];
+        }
+        size--;
+    }
 }
 
