@@ -55,5 +55,14 @@ public class List {
         sb.append("]");
         return sb.toString();
     }
+
+    public boolean contains(int item) {
+        for (int i = 0; i < size; i++) {
+            if (numbers[i] == item) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
