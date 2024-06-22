@@ -73,5 +73,27 @@ public class List {
         }
         return -1;
     }
+
+    public static void main(String[] args) {
+        List list = new List();
+
+        list.add(5);
+        list.add(-1);
+        list.add(0);
+        list.add(99);
+
+        System.out.println(list.size()); 
+        list.remove(1);
+        System.out.println(list);
+        list.add(0);
+        list.add(99);
+        System.out.println(list);
+        list.remove(1); 
+        System.out.println(list.size()); 
+        System.out.println(list); 
+        System.out.println(list.indexOf(100));
+        System.out.println(list.get(2)); 
+        System.out.println(list.contains(5)); 
+    }
 }
 
