@@ -32,5 +32,12 @@ public class List {
         }
         size--;
     }
+
+    public int get(int index) {
+        if (index < 0 || index >= size) {
+            return -1;
+        }
+        return numbers[index];
+    }
 }
 
