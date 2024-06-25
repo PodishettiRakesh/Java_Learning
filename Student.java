@@ -9,5 +9,9 @@ public class Student {
         this.grade=grade;
     }
 
+    public void Studentdetails(){
+        System.out.println("student id is: ");
+    }
+
 
 }
