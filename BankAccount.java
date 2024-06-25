@@ -13,6 +13,7 @@ public class BankAccount {
     public void deposit_amount(int amount){
         if(amount>0){
             Balence+=amount;
+            System.out.println("amount deposited Successfully");
         }else{
             System.out.println("Invalid Amount");
         }
@@ -24,6 +25,12 @@ public class BankAccount {
         }else{
             System.out.println("Invalid amount to withdraw");
         }
+    }
+
+    public static void main(String[] args) {
+        BankAccount account1=new BankAccount("Podishetti Rakesh", "2023501062",0 );
+        account1.deposit_amount(1200);
+
     }
 
 
