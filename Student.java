@@ -23,6 +23,9 @@ public class Student {
     public void setName(String name){
         this.name=name;
     }
+    public void setAge(int age){
+        this.age=age;
+    }
    
     public static void main(String[] args) {
         Student rakesh = new Student(1,"Rakesh", "A",25,97.2f);
