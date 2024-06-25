@@ -22,7 +22,7 @@ public class Student {
 
    
     public static void main(String[] args) {
-        Student rakesh = new Student(1,"Rakesh", "A");
+        Student rakesh = new Student(1,"Rakesh", "A",25,97.2f);
             rakesh.Studentdetails();
 
         
