@@ -27,10 +27,17 @@ public class BankAccount {
         }
     }
 
+    public double checkBalence(){
+        return this.Balence;
+    }
+
     public static void main(String[] args) {
         BankAccount account1=new BankAccount("Podishetti Rakesh", "2023501062",0 );
         account1.deposit_amount(1200);
-
+        account1.withdraw(200);
+        System.out.println(account1.Balence);
+        System.out.println(account1.checkBalence());
+        
     }
 
 
