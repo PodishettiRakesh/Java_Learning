@@ -18,6 +18,8 @@ public class Student {
         System.out.println("student id is: "+ student_id);
         System.out.println("student name: "+name);
         System.out.println("student grade: "+grade);
+        System.out.println("student age: "+age);
+        System.out.println("Student marks: "+marks);
     }
 
     public void setName(String name){
@@ -29,6 +31,10 @@ public class Student {
    
     public static void main(String[] args) {
         Student rakesh = new Student(1,"Rakesh", "A",25,97.2f);
+            rakesh.Studentdetails();
+            System.out.println("---after updating student details----");
+            rakesh.setName("Podishetti Rakesh");
+            rakesh.setAge(26);
             rakesh.Studentdetails();
 
         
