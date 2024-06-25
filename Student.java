@@ -15,5 +15,9 @@ public class Student {
         System.out.println("student grade: "+grade);
     }
 
+    public static void main(String[] args) {
+        
+    }
+
 
 }
