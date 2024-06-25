@@ -36,7 +36,5 @@ public class Student {
             rakesh.setName("Podishetti Rakesh");
             rakesh.setAge(26);
             rakesh.Studentdetails();
-
-        
     }
 }
