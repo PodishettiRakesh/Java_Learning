@@ -10,7 +10,9 @@ public class Student {
     }
 
     public void Studentdetails(){
-        System.out.println("student id is: ");
+        System.out.println("student id is: "+ student_id);
+        System.out.println("student name: "+name);
+        System.out.println("student grade: "+grade);
     }
 
 
