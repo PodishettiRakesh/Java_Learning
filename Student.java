@@ -16,12 +16,11 @@ public class Student {
         System.out.println("student grade: "+grade);
     }
 
+   
     public static void main(String[] args) {
-        Student rakesh = new Student(01,"Rakesh","A"){
-            x=rakesh.Studentdetails();
+        Student rakesh = new Student(1,"Rakesh", "A");
+            rakesh.Studentdetails();
 
-        }
+        
     }
-
-
 }
