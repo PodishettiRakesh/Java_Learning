@@ -1,10 +1,12 @@
 public class Student {
     int student_id;
     String name;
-    String grade;
+    char grade;
 
-    public Student(){
-        
+    public Student(int id,String name,char grade){
+        this.student_id=id;
+        this.name=name;
+        this.grade=grade;
     }
 
 
