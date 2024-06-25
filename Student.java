@@ -20,6 +20,9 @@ public class Student {
         System.out.println("student grade: "+grade);
     }
 
+    public void setName(String name){
+        this.name=name;
+    }
    
     public static void main(String[] args) {
         Student rakesh = new Student(1,"Rakesh", "A",25,97.2f);
