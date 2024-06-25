@@ -18,5 +18,13 @@ public class BankAccount {
         }
     }
 
-    
+    public void withdraw(int amount){
+        if(amount>0 & amount<=Balence){
+            Balence-=amount;
+        }else{
+            System.out.println("Invalid amount to withdraw");
+        }
+    }
+
+
 }
