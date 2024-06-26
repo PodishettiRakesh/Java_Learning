@@ -3,19 +3,19 @@ package Rakesh;
 public class Students {
     int student_id;
     String name;
-    static String college;
+    String college;
 
 
-    public Students(int student_id,String name){
+    public Students(int student_id,String name,String college){
         this.student_id=student_id;
         this.name=name;
-        Students.college="IITH";
+        this.college=college;
     }
 
      public void Studentdetails(){
         System.out.println("student id is: "+ student_id);
         System.out.println("student name: "+name);
-        System.out.println("college name is: "+Students.college);
+        System.out.println("college name is: "+college);
     }
 }
 
