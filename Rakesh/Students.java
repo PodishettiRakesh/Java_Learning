@@ -5,6 +5,7 @@ public class Students {
     String name;
     static String college;
 
+    
     public Students(int student_id,String name){
         this.student_id=student_id;
         this.name=name;
