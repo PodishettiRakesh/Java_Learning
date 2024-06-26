@@ -1,3 +1,4 @@
+
 public class Student {
     int student_id;
     String name;
@@ -29,6 +30,9 @@ public class Student {
         this.age=age;
     }
    
+    public void message(){
+        System.out.println("welcome to the student class");
+    }
     public static void main(String[] args) {
         Student rakesh = new Student(1,"Rakesh", "A",25,97.2f);
             rakesh.Studentdetails();

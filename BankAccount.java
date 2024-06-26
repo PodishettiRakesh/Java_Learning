@@ -1,3 +1,4 @@
+
 public class BankAccount {
     String HolderName;
     String AcNumber;
@@ -37,6 +38,8 @@ public class BankAccount {
         account1.withdraw(200);
         System.out.println(account1.Balence);
         System.out.println(account1.checkBalence());
+
+
         
     }
 
