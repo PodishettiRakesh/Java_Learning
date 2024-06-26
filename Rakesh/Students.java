@@ -12,7 +12,7 @@ public class Students {
         this.college=college;
     }
 
-     public void Studentdetails(){
+     public void displaydetails(){
         System.out.println("student id is: "+ student_id);
         System.out.println("student name: "+name);
         System.out.println("college name is: "+college);
