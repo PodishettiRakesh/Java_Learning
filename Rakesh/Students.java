@@ -3,7 +3,7 @@ package Rakesh;
 public class Students {
     int student_id;
     String name;
-    static String college=;
+    static String college;
 
 
     public Students(int student_id,String name){
@@ -11,9 +11,9 @@ public class Students {
         this.name=name;
     }
 
-    // public void setCollege(String clg){
-    //     Students.college=clg;
-    // }
+    public void setCollege(String clg){
+        Students.college=clg;
+    }
 
      public void displaydetails(){
         System.out.println("student id is: "+ student_id);
