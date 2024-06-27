@@ -1,10 +1,10 @@
 
 public class Student {
-    int student_id;
-    String name;
+    private int student_id;
+    private String name;
     String grade;
     int age;
-    float marks;
+    private float marks;
 
     public Student(int id,String name,String grade,int age,float marks){
         this.student_id=id;
@@ -32,6 +32,10 @@ public class Student {
    
     public void message(){
         System.out.println("welcome to the student class");
+    }
+
+    public String getName(){
+        return this.name;
     }
     public static void main(String[] args) {
         Student rakesh = new Student(1,"Rakesh", "A",25,97.2f);
