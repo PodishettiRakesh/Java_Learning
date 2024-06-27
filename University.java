@@ -20,6 +20,8 @@ public class University {
         University univer=new University(("IIIT-H"));
         Department depart= univer.new Department("MSIT");
         depart.studentDetails();
+        Student s1=new Student(03, "ramudu", "A", 36, 53.5f);
+        System.out.println(s1.getName());
         
     }
 }
