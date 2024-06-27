@@ -12,7 +12,14 @@ public class University {
 
         public void studentDetails(){
             System.out.println("studnet University: "+this.name);
+            System.out.println("studnet DEpartment: "+this.name);
         }
+    }
 
+    public static void main(String[] args) {
+        University univer=new University(("IIIT-H"));
+        Department depart= univer.new Department("MSIT");
+        depart.studentDetails();
+        
     }
 }
