@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Array {
     private int[] intArray;
@@ -29,6 +30,22 @@ public class Array {
         }
     }
 
+    public Array(int numRandom, int low, int high){
+        this.intArray=new int[20];
+        if (numRandom>=low && numRandom<=high){
+            int count=0;
+            for(int i=0;i<numRandom;i++){
+                Random ran = new Random();
+                int ele=ran.nextInt(high-low-1)+low;
+
+                if(count<this.maxValues){
+                    intArray[count++]=ele;
+                    numValues++;
+                }
+            }
+        }
+    }
+
     
     public void printArray() {
         for (int i = 0; i < numValues; i++) {
@@ -42,5 +59,8 @@ public class Array {
         int[] arr = {1, 2, 3, 4, 2, 3, 5, 6, 7, 9, 1};
         Array myArray = new Array(arr);
         myArray.printArray(); 
+        Array ranArray = new Array(12,2,9);
+        ranArray.printArray();
+
     }
 }
