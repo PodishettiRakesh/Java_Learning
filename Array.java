@@ -16,7 +16,8 @@ public class Array{
 
     public static void main(String[] args) {
         Array ar = new Array();
-        System.out.println(ar);
-        
+        int[] arr= {1,2,1,3,4,4,5,6,7};
+        System.out.println(ar.MyArray(arr));
+
     }
 }
