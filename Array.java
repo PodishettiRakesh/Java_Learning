@@ -96,21 +96,31 @@ public class Array {
         }
     }
 
+    public void rotateRight(){
+        int last=intArray[numValues-1];
+        for(int i=numValues-1;i>0;i--){
+            intArray[i]=intArray[i-1];
+        }
+        intArray[0]=last;
+    }
+
     public static void main(String[] args) {
         Array ar = new Array();
         int[] arr = {99,7,6,4,3,1,1};
         Array myArray = new Array(arr);
         myArray.printArray();
 
-        Array ranArray = new Array(12, 2, 9); 
-        ranArray.printArray(); 
+        // Array ranArray = new Array(12, 2, 9); 
+        // ranArray.printArray(); 
         // System.out.println(ar.isEmpty());
         // System.out.println(myArray.isDecreasing());
         // System.out.println(ranArray.maximum());
         // System.out.println(myArray.maximum());
 
-        myArray.insertfront(789);
+        // myArray.insertfront(789);
+        myArray.rotateRight();
         myArray.printArray();
+
     }
     
 }
