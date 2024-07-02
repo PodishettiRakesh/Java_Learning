@@ -5,7 +5,6 @@ public class Array {
     private int numValues;
     private int maxValues;
 
-    // Default constructor
     public Array() {
         this.numValues = 0;
         this.maxValues = 20;
@@ -123,7 +122,16 @@ public class Array {
         return numValues==maxValues;
     }
 
-
+    public void enlarge(){
+        if(numValues==maxValues){
+            maxValues=maxValues*2;
+            int[] newArray=new int[maxValues];
+            for(int i=0;i<numValues;i++){
+                newArray[i]=intArray[i];
+            }
+            intArray=newArray;
+        }
+    }
 
 
     public static void main(String[] args) {
