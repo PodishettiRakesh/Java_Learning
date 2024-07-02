@@ -79,6 +79,23 @@ public class Array {
         return maxi;
     }
 
+    public void insertfront(int num){
+        // if(this.numValues < maxValues){
+        //     int ele=num;
+        //     for(int i=0;i<numValues;i++){
+        //         intArray[i]=ele;
+        //         ele=intArray[i];
+        //     }
+        // }
+
+        if(this.numValues<maxValues){
+            for(int i=numValues;i>0;i--){
+                intArray[i]=intArray[i-1];
+            }
+            intArray[0]=num;
+        }
+    }
+
     public static void main(String[] args) {
         Array ar = new Array();
         int[] arr = {99,7,6,4,3,1,1};
@@ -89,9 +106,11 @@ public class Array {
         ranArray.printArray(); 
         // System.out.println(ar.isEmpty());
         // System.out.println(myArray.isDecreasing());
-        System.out.println(ranArray.maximum());
-        System.out.println(myArray.maximum());
+        // System.out.println(ranArray.maximum());
+        // System.out.println(myArray.maximum());
 
+        myArray.insertfront(789);
+        myArray.printArray();
     }
     
 }
