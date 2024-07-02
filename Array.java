@@ -5,14 +5,13 @@ public class Array {
     private int numValues;
     private int maxValues;
 
-    // Default constructor
     public Array() {
         this.numValues = 0;
         this.maxValues = 20;
         this.intArray = new int[maxValues];
     }
 
-    // Constructor with an array parameter to remove duplicates
+    
     public Array(int[] arr) {
         this.intArray = new int[20];
         this.numValues = 0;
@@ -30,13 +29,13 @@ public class Array {
         }
     }
 
-    // Constructor to generate random numbers within a specified range
+    
     public Array(int numRandom, int low, int high) {
         this.intArray = new int[20]; 
         this.numValues = 0; 
         this.maxValues = 20; 
 
-        if (numRandom >= 1 && low <= high) {
+        if (numRandom > 0 && low <= high) {
             Random ran = new Random();
             int count = 0;
             while (count < numRandom && numValues < maxValues) {
@@ -56,13 +55,133 @@ public class Array {
         System.out.println();
     }
 
+    public boolean isEmpty(){
+        return numValues==0;
+    }
+
+    public boolean isDecreasing(){
+        for(int i=0;i<numValues-1;i++){
+            if(intArray[i]<=intArray[i+1]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int maximum(){
+        int maxi=intArray[0];
+        for(int i=0;i<numValues;i++){
+            if(intArray[i]>=maxi){
+                maxi=intArray[i];
+            }
+        }
+        return maxi;
+    }
+
+    public void insertfront(int num){
+        // if(this.numValues < maxValues){
+        //     // int ele=num;
+        //     for(int i=0;i<numValues;i++){
+        //         int ele=intArray[i];
+        //         intArray[i+1]=ele;
+        //     }
+        //     intArray[0]=num;
+        // }
+
+        if(this.numValues<maxValues){
+            for(int i=numValues;i>0;i--){
+                intArray[i]=intArray[i-1];
+            }
+            intArray[0]=num;
+            numValues++;
+        }
+    }
+
+    public void rotateRight(){
+        int last=intArray[numValues-1];
+        for(int i=numValues-1;i>0;i--){
+            intArray[i]=intArray[i-1];
+        }
+        intArray[0]=last;
+    }
+
+    public void rotateleft(){
+        int first=intArray[0];
+        for(int i=0;i<numValues-1;i++){
+            intArray[i]=intArray[i+1];
+        }
+        intArray[numValues-1]=first;
+    }
+
+    public void reverse(){
+        for(int i=0;i<numValues/2;i++){
+            int temp=intArray[i];
+            intArray[i]=intArray[numValues-1-i];
+            intArray[numValues-1-i]=temp;
+        }
+    }
+
+    public boolean isFull(){
+        return numValues==maxValues;
+    }
+
+    public void enlarge(){
+        if(numValues==maxValues){
+            maxValues=maxValues*2;
+            int[] newArray=new int[maxValues];
+            for(int i=0;i<numValues;i++){
+                newArray[i]=intArray[i];
+            }
+            intArray=newArray;
+        }
+    }
+
+    public String toString(){
+        String str="[";
+        for(int i=0;i<numValues;i++){
+            str+=intArray[i];
+        }
+        str+="]";
+        return str;
+
+    }
+
+    public void makeDups(){
+        int[] duplicateArray=new int[numValues*2];
+        int j=0;
+        for(int i=0;i<numValues;i++){
+            duplicateArray[j++]=intArray[i];
+            duplicateArray[j++]=intArray[i];
+        }
+        intArray=duplicateArray;
+    }
+
+
     public static void main(String[] args) {
         Array ar = new Array();
-        int[] arr = {1, 2, 3, 4, 2, 3, 5, 6, 7, 9, 1};
+        int[] arr = {99,7,6,4,3,1,1};
         Array myArray = new Array(arr);
         myArray.printArray();
 
-        Array ranArray = new Array(12, 2, 9); 
-        ranArray.printArray(); 
+        // Array ranArray = new Array(12, 2, 9); 
+        // ranArray.printArray(); 
+        // System.out.println(ar.isEmpty());
+        // System.out.println(myArray.isDecreasing());
+        // System.out.println(ranArray.maximum());
+        // System.out.println(myArray.maximum());
+
+        myArray.insertfront(789);
+        // myArray.rotateRight();
+        // myArray.printArray();
+        // myArray.rotateleft();
+        myArray.printArray();
+        // System.out.println(myArray.isFull());
+        // System.out.println(myArray.toString());
+        myArray.makeDups();
+        myArray.printArray();
+        myArray.reverse();
+        myArray.printArray();
+
     }
+    
 }
