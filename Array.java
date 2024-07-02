@@ -12,7 +12,7 @@ public class Array {
         this.intArray = new int[maxValues];
     }
 
-    // Constructor with an array parameter to remove duplicates
+    
     public Array(int[] arr) {
         this.intArray = new int[20];
         this.numValues = 0;
@@ -30,13 +30,13 @@ public class Array {
         }
     }
 
-    // Constructor to generate random numbers within a specified range
+    
     public Array(int numRandom, int low, int high) {
         this.intArray = new int[20]; 
         this.numValues = 0; 
         this.maxValues = 20; 
 
-        if (numRandom >= 1 && low <= high) {
+        if (numRandom > 0 && low <= high) {
             Random ran = new Random();
             int count = 0;
             while (count < numRandom && numValues < maxValues) {
@@ -56,6 +56,10 @@ public class Array {
         System.out.println();
     }
 
+    public boolean isEmpty(){
+        return numValues==0;
+    }
+
     public static void main(String[] args) {
         Array ar = new Array();
         int[] arr = {1, 2, 3, 4, 2, 3, 5, 6, 7, 9, 1};
@@ -64,5 +68,6 @@ public class Array {
 
         Array ranArray = new Array(12, 2, 9); 
         ranArray.printArray(); 
+        // System.out.println(ar.isEmpty());
     }
 }
