@@ -133,6 +133,16 @@ public class Array {
         }
     }
 
+    public String toString(){
+        String str="[";
+        for(int i=0;i<numValues;i++){
+            str+=intArray[i];
+        }
+        str+="]";
+        return str;
+
+    }
+
 
     public static void main(String[] args) {
         Array ar = new Array();
@@ -148,11 +158,13 @@ public class Array {
         // System.out.println(myArray.maximum());
 
         // myArray.insertfront(789);
-        myArray.rotateRight();
+        // myArray.rotateRight();
+        // myArray.printArray();
+        // myArray.rotateleft();
         myArray.printArray();
-        myArray.rotateleft();
-        myArray.printArray();
-        System.out.println(myArray.isFull());
+        // System.out.println(myArray.isFull());
+        System.out.println(myArray.toString());
+
 
     }
     
