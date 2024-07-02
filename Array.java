@@ -112,6 +112,20 @@ public class Array {
         intArray[numValues-1]=first;
     }
 
+    // public void reverse(){
+    //     int mid=intArray.length;
+    //     for(int i=0;i<=mid;i++){
+
+    //     }
+    // }
+
+    public boolean isFull(){
+        return numValues==maxValues;
+    }
+
+
+
+
     public static void main(String[] args) {
         Array ar = new Array();
         int[] arr = {99,7,6,4,3,1,1};
@@ -130,6 +144,7 @@ public class Array {
         myArray.printArray();
         myArray.rotateleft();
         myArray.printArray();
+        System.out.println(myArray.isFull());
 
     }
     
