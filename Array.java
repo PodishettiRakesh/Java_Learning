@@ -104,6 +104,14 @@ public class Array {
         intArray[0]=last;
     }
 
+    public void rotateleft(){
+        int first=intArray[0];
+        for(int i=0;i<numValues-1;i++){
+            intArray[i]=intArray[i+1];
+        }
+        intArray[numValues-1]=first;
+    }
+
     public static void main(String[] args) {
         Array ar = new Array();
         int[] arr = {99,7,6,4,3,1,1};
@@ -119,6 +127,8 @@ public class Array {
 
         // myArray.insertfront(789);
         myArray.rotateRight();
+        myArray.printArray();
+        myArray.rotateleft();
         myArray.printArray();
 
     }
