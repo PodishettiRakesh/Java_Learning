@@ -60,14 +60,25 @@ public class Array {
         return numValues==0;
     }
 
+    public boolean isDecreasing(){
+        for(int i=0;i<numValues-1;i++){
+            if(intArray[i]<=intArray[i+1]){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         Array ar = new Array();
-        int[] arr = {1, 2, 3, 4, 2, 3, 5, 6, 7, 9, 1};
+        int[] arr = {99,7,6,4,3,1,1};
         Array myArray = new Array(arr);
         myArray.printArray();
 
         Array ranArray = new Array(12, 2, 9); 
         ranArray.printArray(); 
         // System.out.println(ar.isEmpty());
+        System.out.println(myArray.isDecreasing());
     }
+    
 }
