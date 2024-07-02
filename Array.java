@@ -69,6 +69,16 @@ public class Array {
         return true;
     }
 
+    public int maximum(){
+        int maxi=intArray[0];
+        for(int i=0;i<numValues;i++){
+            if(intArray[i]>=maxi){
+                maxi=intArray[i];
+            }
+        }
+        return maxi;
+    }
+
     public static void main(String[] args) {
         Array ar = new Array();
         int[] arr = {99,7,6,4,3,1,1};
@@ -78,7 +88,10 @@ public class Array {
         Array ranArray = new Array(12, 2, 9); 
         ranArray.printArray(); 
         // System.out.println(ar.isEmpty());
-        System.out.println(myArray.isDecreasing());
+        // System.out.println(myArray.isDecreasing());
+        System.out.println(ranArray.maximum());
+        System.out.println(myArray.maximum());
+
     }
     
 }
