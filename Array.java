@@ -113,12 +113,13 @@ public class Array {
         intArray[numValues-1]=first;
     }
 
-    // public void reverse(){
-    //     int mid=intArray.length;
-    //     for(int i=0;i<=mid;i++){
-
-    //     }
-    // }
+    public void reverse(){
+        for(int i=0;i<numValues/2;i++){
+            int temp=intArray[i];
+            intArray[i]=intArray[numValues-1-i];
+            intArray[numValues-1-i]=temp;
+        }
+    }
 
     public boolean isFull(){
         return numValues==maxValues;
@@ -177,6 +178,8 @@ public class Array {
         // System.out.println(myArray.isFull());
         // System.out.println(myArray.toString());
         myArray.makeDups();
+        myArray.printArray();
+        myArray.reverse();
         myArray.printArray();
 
     }
