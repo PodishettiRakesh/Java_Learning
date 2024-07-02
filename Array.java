@@ -80,11 +80,12 @@ public class Array {
 
     public void insertfront(int num){
         // if(this.numValues < maxValues){
-        //     int ele=num;
+        //     // int ele=num;
         //     for(int i=0;i<numValues;i++){
-        //         intArray[i]=ele;
-        //         ele=intArray[i];
+        //         int ele=intArray[i];
+        //         intArray[i+1]=ele;
         //     }
+        //     intArray[0]=num;
         // }
 
         if(this.numValues<maxValues){
@@ -92,6 +93,7 @@ public class Array {
                 intArray[i]=intArray[i-1];
             }
             intArray[0]=num;
+            numValues++;
         }
     }
 
@@ -143,6 +145,16 @@ public class Array {
 
     }
 
+    public void makeDups(){
+        int[] duplicateArray=new int[numValues*2];
+        int j=0;
+        for(int i=0;i<numValues;i++){
+            duplicateArray[j++]=intArray[i];
+            duplicateArray[j++]=intArray[i];
+        }
+        intArray=duplicateArray;
+    }
+
 
     public static void main(String[] args) {
         Array ar = new Array();
@@ -157,14 +169,15 @@ public class Array {
         // System.out.println(ranArray.maximum());
         // System.out.println(myArray.maximum());
 
-        // myArray.insertfront(789);
+        myArray.insertfront(789);
         // myArray.rotateRight();
         // myArray.printArray();
         // myArray.rotateleft();
         myArray.printArray();
         // System.out.println(myArray.isFull());
-        System.out.println(myArray.toString());
-
+        // System.out.println(myArray.toString());
+        myArray.makeDups();
+        myArray.printArray();
 
     }
     
