@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 class Blackjack {
     private static final char[] SUITS = {'H', 'D', 'C', 'S'};
@@ -11,6 +12,8 @@ class Blackjack {
     private List<String> deck;
     private List<String> playerHand;
     private List<String> dealerHand;
+    private int playerScore;
+    private int dealerScore;
 
     public Blackjack() {
         initializeCards();
@@ -18,6 +21,9 @@ class Blackjack {
         playerHand = new ArrayList<>();
         dealerHand = new ArrayList<>();
         dealInitialCards();
+        playerScore=calculateScore(playerHand);
+        dealerScore=calculateScore(dealerHand);
+
     }
 
     private void initializeCards() {
@@ -70,14 +76,33 @@ class Blackjack {
     
 
     private void playerTurn(){
-        System.out.println("playerhand");
+        Scanner scan = new Scanner(System.in);
+        while(true){
+            System.out.println("playerhand"+playerHand);
+            System.out.println("playerScore"+playerScore);
+            System.out.println("please enter h to hit or s to stand");
+            String choice=scan.nextLine();
+            if(choice.equalsIgnoreCase("h")){
+                playerHand.add(drawCard());
+                playerScore=calculateScore(playerHand);
+                if(playerScore>MAX_POINTS){
+                    System.out.println("your score exceeds maximum score");
+                    break;
+                }
+            } else if(choice.equalsIgnoreCase("s")){
+                break;
+            }else{
+                System.out.println("invalid input, allowed inputs: (h) and (s)");
+            }
+        }
     }
 
     public static void main(String[] args) {
         Blackjack game = new Blackjack();
-        System.out.println(game.deck);
-        System.out.println(game.playerHand);
-        System.out.println(game.dealerHand);
-        System.out.println(game.calculateScore(game.playerHand));
+        // System.out.println(game.deck);
+        // System.out.println(game.playerHand);
+        // System.out.println(game.dealerHand);
+        // System.out.println(game.calculateScore(game.playerHand));
+        game.playerTurn();
     }
 }
