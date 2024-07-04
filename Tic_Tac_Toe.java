@@ -11,6 +11,7 @@ public class Tic_Tac_Toe {
         initializeBoard();
     }
 
+    //initialize board with empty spaces
     private void initializeBoard(){
         board= new char[SIZE][SIZE];
         // Random ran = new Random();
@@ -19,11 +20,19 @@ public class Tic_Tac_Toe {
                 board[i][j]='_';
             }
         }
-        
+    }
+
+    private void printBoard(){
+        for(int row=0;row<SIZE;row++){
+            for(int col=0;col<SIZE;col++){
+                    System.out.print(board[row][col]+" ");
+            }
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
         Tic_Tac_Toe ttt = new Tic_Tac_Toe();
-        System.out.println(ttt.board);
+        ttt.printBoard();
     }
 }
