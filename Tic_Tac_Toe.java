@@ -66,13 +66,21 @@ public class Tic_Tac_Toe {
 
             if(board[row][col]=='_'){
                 board[row][col]=player_turn;
+                if(player_turn==player1){
+                    player_turn=player2;
+                }else{
+                    player_turn=player1;
+                }
                 break;
-            }   
+            }  
+
         } 
     }
 
     public static void main(String[] args) {
         Tic_Tac_Toe ttt = new Tic_Tac_Toe();
+        ttt.makeMove();
+
     }
 
 }
