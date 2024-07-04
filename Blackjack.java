@@ -17,13 +17,14 @@ class Blackjack {
         shuffleDeck();
         playerHand = new ArrayList<>();
         dealerHand = new ArrayList<>();
+        dealInitialCards();
     }
 
     private void initializeCards() {
         deck = new ArrayList<>();
         for (char suit : SUITS) {
             for (String rank : RANKS) {
-                deck.add(suit + "" + rank);
+                deck.add(suit + " " + rank);
             }
         }
     }
@@ -43,8 +44,16 @@ class Blackjack {
         return deck.remove(deck.size() - 1);
     }
 
+    // public int calculateScore(List<String> hand){
+    //     for(String card : hand){
+                
+    //     }
+    // }
+
     public static void main(String[] args) {
         Blackjack game = new Blackjack();
         System.out.println(game.deck);
+        System.out.println(game.playerHand);
+        System.out.println(game.dealerHand);
     }
 }
