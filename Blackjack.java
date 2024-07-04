@@ -24,7 +24,7 @@ class Blackjack {
         deck = new ArrayList<>();
         for (char suit : SUITS) {
             for (String rank : RANKS) {
-                deck.add(suit + " " + rank);
+                deck.add(suit + rank);
             }
         }
     }
@@ -44,16 +44,40 @@ class Blackjack {
         return deck.remove(deck.size() - 1);
     }
 
-    // public int calculateScore(List<String> hand){
-    //     for(String card : hand){
-                
-    //     }
-    // }
+    private int calculateScore(List<String> hand) {
+        int score = 0;
+        int aceCount = 0;
+    
+        for (String card : hand) {
+            String rank = card.substring(1);
+    
+            if (rank.equals("J") || rank.equals("Q") || rank.equals("K")) {
+                score += 10;
+            } else if (rank.equals("A")) {
+                aceCount++;
+                score += 11;
+            } else {
+                score += Integer.parseInt(rank);
+            }
+        }
+        while (score > 21 && aceCount > 0) {
+            score -= 10;
+            aceCount--;
+        }
+    
+        return score;
+    }
+    
+
+    private void playerTurn(){
+        System.out.println("playerhand");
+    }
 
     public static void main(String[] args) {
         Blackjack game = new Blackjack();
         System.out.println(game.deck);
         System.out.println(game.playerHand);
         System.out.println(game.dealerHand);
+        System.out.println(game.calculateScore(game.playerHand));
     }
 }
