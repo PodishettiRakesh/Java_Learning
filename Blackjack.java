@@ -115,18 +115,18 @@ class Blackjack {
 
         if(playerScore==dealerScore){
             System.out.println("game Tie!");
-        } else if(playerScore>dealerScore && playerScore<MAX_POINTS){
+        } else if(playerScore>dealerScore && playerScore<=MAX_POINTS){
             System.out.println("player is winner");
-        } else if(dealerScore>playerScore && dealerScore < MAX_POINTS){
+        } else if(dealerScore>playerScore && dealerScore <= MAX_POINTS){
             System.out.println("dealer is winner");
         }
     }
 
     private void playGame(){
         playerTurn();
-        if(playerScore<=MAX_POINTS){
+        if(playerScore<MAX_POINTS){
             dealerTurn();
-        }else{
+        }else if(playerScore>MAX_POINTS){
             System.out.println("player bust and dealer wins");
         }
         checkWinner();
