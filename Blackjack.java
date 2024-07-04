@@ -57,7 +57,7 @@ class Blackjack {
         for (String card : hand) {
             String rank = card.substring(1);
     
-            if (rank.equals("J") || rank.equals("Q") || rank.equals("K")) {
+            if (rank.equals( "J") || rank.equals("Q") || rank.equals("K")) {
                 score += 10;
             } else if (rank.equals("A")) {
                 aceCount++;
@@ -86,13 +86,13 @@ class Blackjack {
                 playerHand.add(drawCard());
                 playerScore=calculateScore(playerHand);
                 if(playerScore>MAX_POINTS){
-                    System.out.println("your score exceeds maximum score");
+                    // System.out.println("your score exceeds maximum score, so BUST");
                     break;
                 }
             } else if(choice.equalsIgnoreCase("s")){
                 break;
             }else{
-                System.out.println("invalid input, allowed inputs: (h) and (s)");
+                System.out.println("invalid input, allowed inputs:. (h) and (s)");
             }
         }
         scan.close();
@@ -100,17 +100,41 @@ class Blackjack {
 
     private void dealerTurn(){
         dealerScore=calculateScore(dealerHand);
+        System.out.println("dealerscore: "+ dealerScore);
         while(dealerScore < DEALER_MAX_POINTS){
             dealerHand.add(drawCard());
             dealerScore=calculateScore(dealerHand);
             System.out.println("dealerscore: "+ dealerScore);
         }
-        System.out.println("dealer score also exceeds dealer max points limit");
+        // System.out.println("dealer score also exceeds dealer max points limit");
+    }
+
+    private void checkWinner(){
+        playerScore=calculateScore(playerHand);
+        dealerScore=calculateScore(dealerHand);
+
+        if(playerScore==dealerScore){
+            System.out.println("game Tie!");
+        } else if(playerScore>dealerScore && playerScore<MAX_POINTS){
+            System.out.println("player is winner");
+        } else if(dealerScore>playerScore && dealerScore < MAX_POINTS){
+            System.out.println("dealer is winner");
+        }
+    }
+
+    private void playGame(){
+        playerTurn();
+        if(playerScore<=MAX_POINTS){
+            dealerTurn();
+        }else{
+            System.out.println("player bust and dealer wins");
+        }
+        checkWinner();
     }
 
     public static void main(String[] args) {
         Blackjack game = new Blackjack();
-        game.playerTurn();
-        game.dealerTurn();
+        game.playGame();
     }
 }
+
