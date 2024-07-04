@@ -66,21 +66,29 @@ public class Tic_Tac_Toe {
 
             if(board[row][col]=='_'){
                 board[row][col]=player_turn;
-                if(player_turn==player1){
-                    player_turn=player2;
-                }else{
-                    player_turn=player1;
-                }
+                switchPlayer();
+                printBoard();
                 break;
-            }  
-
+            }else{
+                System.out.println("that position is already marked try again");
+            }
         } 
+    }
+
+    private void switchPlayer(){
+        if(player_turn==player1){
+            player_turn=player2;
+        }else{
+            player_turn=player1;
+        }
     }
 
     public static void main(String[] args) {
         Tic_Tac_Toe ttt = new Tic_Tac_Toe();
-        ttt.makeMove();
-
+        int count = 0;
+        while(count < 5){
+            ttt.makeMove();
+        }
     }
 
 }
