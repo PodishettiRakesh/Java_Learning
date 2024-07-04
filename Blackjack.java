@@ -7,7 +7,7 @@ class Blackjack {
     private static final char[] SUITS = {'H', 'D', 'C', 'S'};
     private static final String[] RANKS = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
     private static final int MAX_POINTS = 21;
-    private static final int DEALER_MIN_POINTS = 17;
+    private static final int DEALER_MAX_POINTS = 17;
 
     private List<String> deck;
     private List<String> playerHand;
@@ -79,7 +79,7 @@ class Blackjack {
         Scanner scan = new Scanner(System.in);
         while(true){
             System.out.println("playerhand"+playerHand);
-            System.out.println("playerScore"+playerScore);
+            System.out.println("playerScore "+playerScore);
             System.out.println("please enter h to hit or s to stand");
             String choice=scan.nextLine();
             if(choice.equalsIgnoreCase("h")){
@@ -98,8 +98,19 @@ class Blackjack {
         scan.close();
     }
 
+    private void dealerTurn(){
+        dealerScore=calculateScore(dealerHand);
+        while(dealerScore < DEALER_MAX_POINTS){
+            dealerHand.add(drawCard());
+            dealerScore=calculateScore(dealerHand);
+            System.out.println("dealerscore: "+ dealerScore);
+        }
+        System.out.println("dealer score also exceeds dealer max points limit");
+    }
+
     public static void main(String[] args) {
         Blackjack game = new Blackjack();
         game.playerTurn();
+        game.dealerTurn();
     }
 }
