@@ -39,8 +39,11 @@ public class Tic_Tac_Toe {
 
     private void makeMove(){
         Random ran = new Random();
+        Scanner scan = new Scanner(System.in);
 
-        int row=
+        int row = scan.nextInt();
+        int col = scan.nextInt();
+
     }
 
     public static void main(String[] args) {
