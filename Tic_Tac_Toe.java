@@ -21,4 +21,9 @@ public class Tic_Tac_Toe {
         }
         
     }
+
+    public static void main(String[] args) {
+        Tic_Tac_Toe ttt = new Tic_Tac_Toe();
+        System.out.println(ttt.board);
+    }
 }
