@@ -95,14 +95,11 @@ class Blackjack {
                 System.out.println("invalid input, allowed inputs: (h) and (s)");
             }
         }
+        scan.close();
     }
 
     public static void main(String[] args) {
         Blackjack game = new Blackjack();
-        // System.out.println(game.deck);
-        // System.out.println(game.playerHand);
-        // System.out.println(game.dealerHand);
-        // System.out.println(game.calculateScore(game.playerHand));
         game.playerTurn();
     }
 }
