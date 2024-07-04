@@ -41,9 +41,34 @@ public class Tic_Tac_Toe {
         Random ran = new Random();
         Scanner scan = new Scanner(System.in);
 
-        int row = scan.nextInt();
-        int col = scan.nextInt();
+        while(true){
+            int row;
+            int col;
+            while(true){
+                System.out.println("please enter your row");
+                row =scan.nextInt();
+                if(row>SIZE){
+                    System.out.println("your row index is out of board, please re-enter ");
+                }else{
+                    break;
+                }
+            }
 
+            while(true){
+                System.out.println("please enter your col");
+                col=scan.nextInt();
+                if(col>SIZE){
+                    System.out.println("your col index is out of board, please re-enter ");
+                }else{
+                    break;
+                }
+            }
+
+            if(board[row][col]=='_'){
+                board[row][col]=player_turn;
+                break;
+            }   
+        } 
     }
 
     public static void main(String[] args) {
