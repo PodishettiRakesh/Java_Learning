@@ -1,15 +1,21 @@
 import java.util.Random;
+import java.util.Scanner;
 public class Tic_Tac_Toe {
     // size is 3
     private static final int SIZE=3;
     private static  final char player1='x';
     private static final char player2='o';
 
+
     private char[][] board;
+    private char player_turn;
 
     public Tic_Tac_Toe(){
         initializeBoard();
+        player_turn=player1;
     }
+
+
 
     //initialize board with empty spaces
     private void initializeBoard(){
@@ -31,8 +37,14 @@ public class Tic_Tac_Toe {
         }
     }
 
+    private void makeMove(){
+        Random ran = new Random();
+
+        int row=
+    }
+
     public static void main(String[] args) {
         Tic_Tac_Toe ttt = new Tic_Tac_Toe();
-        ttt.printBoard();
     }
+
 }
