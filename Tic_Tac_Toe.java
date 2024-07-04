@@ -47,7 +47,7 @@ public class Tic_Tac_Toe {
             while(true){
                 System.out.println("please enter your row");
                 row =scan.nextInt();
-                if(row>SIZE){
+                if(row>=SIZE){
                     System.out.println("your row index is out of board, please re-enter ");
                 }else{
                     break;
@@ -57,7 +57,7 @@ public class Tic_Tac_Toe {
             while(true){
                 System.out.println("please enter your col");
                 col=scan.nextInt();
-                if(col>SIZE){
+                if(col>=SIZE){
                     System.out.println("your col index is out of board, please re-enter ");
                 }else{
                     break;
@@ -82,6 +82,17 @@ public class Tic_Tac_Toe {
             player_turn=player1;
         }
     }
+
+    // private void checkWin(){
+    //     int row=0;
+    //     for(int i=0;i<SIZE;i++){
+    //         if(board[row][i]=='_'){
+    //             continue;
+    //         }else{
+    //             break;
+    //         }
+    //     }
+    // }
 
     public static void main(String[] args) {
         Tic_Tac_Toe ttt = new Tic_Tac_Toe();
