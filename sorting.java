@@ -41,6 +41,7 @@ public class sorting {
         }
         System.out.println();
     }
+
     private int binarySearch(int[] array, int num){
         int start=0;
         int end=array.length-1;
@@ -55,6 +56,22 @@ public class sorting {
             } 
         }
         return -1;
+    }
+
+    private void mergeSort(){
+
+    }
+
+    private void insertionSort(){
+        for(int i=1;i<array.length;i++){
+            int j=i-1;
+            int value=array[i];
+
+            while(j>=0 && array[j]>value){
+                array[j+1]=array[j];
+                
+            }
+        }
     }
 
     public static void main(String[] args) {
