@@ -124,10 +124,19 @@ public class Tic_Tac_Toe {
         return false;
     }
 
+    private boolean checkTie(){
+        for(int row=0;row<SIZE;row++){
+            for(int col=0;col<SIZE;col++){
+                if(board[row][col]=='_'){
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         Tic_Tac_Toe ttt = new Tic_Tac_Toe();
-
     }
 
 }
