@@ -35,6 +35,11 @@ public class sorting {
     }
 
 
+    private void printArray(){
+        for(int each : array){
+            System.out.print(each+" ");
+        }
+    }
     private int binarySearch(int[] array, int num){
         int start=0;
         int end=array.length-1;
@@ -55,7 +60,7 @@ public class sorting {
         // sorting obj = new sorting();
         int[] arr={1,2,3,4,5,6,7};
         sorting sorted = new sorting();
-        System.out.println(sorted.array);
+        sorted.printArray();
         
 
     }
