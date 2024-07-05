@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 public class Tic_Tac_Toe {
-    // size is 3
+    
     private static final int SIZE=3;
     private static  final char player1='x';
     private static final char player2='o';
@@ -15,7 +15,7 @@ public class Tic_Tac_Toe {
         player_turn=player1;
     }
 
-
+    
 
     //initialize board with empty spaces
     private void initializeBoard(){
@@ -42,6 +42,7 @@ public class Tic_Tac_Toe {
         Scanner scan = new Scanner(System.in);
 
         while(true){
+            System.out.println(player_turn+" turn");
             int row;
             int col;
             while(true){
@@ -83,23 +84,77 @@ public class Tic_Tac_Toe {
         }
     }
 
-    // private void checkWin(){
-    //     int row=0;
-    //     for(int i=0;i<SIZE;i++){
-    //         if(board[row][i]=='_'){
-    //             continue;
-    //         }else{
-    //             break;
-    //         }
-    //     }
-    // }
+    private boolean checkWin(){
+        for(int row=0;row<SIZE;row++){
+            int rowCheck=0;
+            int colCheck=0;
+            for (int col=0;col<SIZE;col++){
+                if(board[row][col]==player_turn){
+                    rowCheck++;
+                }
+                if(board[col][row]==player_turn){
+                    colCheck++;
+                }
+            }
+            if(rowCheck==SIZE){
+                return true;
+            }else if(colCheck==SIZE){
+                return true;
+            }
+        }
+
+        int rDiagonal=0;
+        for(int i=0;i<SIZE;i++){
+            if(board[i][i]==player_turn){
+                rDiagonal++;
+            }
+        }
+        if(rDiagonal==SIZE){
+            return true;
+        }
+        
+        int lDiagonal=0;
+        for(int i=0;i<SIZE;i++){
+            if(board[i][SIZE-i]==player_turn){
+                lDiagonal++;
+            }
+        }
+        if(lDiagonal==SIZE){
+            return true;
+        }
+        return false;
+    }
+
+    private boolean checkTie(){
+        for(int row=0;row<SIZE;row++){
+            for(int col=0;col<SIZE;col++){
+                if(board[row][col]=='_'){
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+    private void playGame(){
+        printBoard();
+        while(true){
+            makeMove();
+            if(checkWin()){
+                System.out.println(player_turn+" symbol player is winner");
+                break;
+            }else if(checkTie()){
+                System.out.println("Its Tie Game");
+                break;
+            }
+            printBoard();
+        }
+        
+    }
 
     public static void main(String[] args) {
         Tic_Tac_Toe ttt = new Tic_Tac_Toe();
-        int count = 0;
-        while(count < 5){
-            ttt.makeMove();
-        }
+        ttt.playGame();
     }
 
 }
