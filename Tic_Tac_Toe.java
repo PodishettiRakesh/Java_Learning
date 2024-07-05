@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 public class Tic_Tac_Toe {
-    // size is 3
+    
     private static final int SIZE=3;
     private static  final char player1='x';
     private static final char player2='o';
@@ -15,7 +15,7 @@ public class Tic_Tac_Toe {
         player_turn=player1;
     }
 
-
+    
 
     //initialize board with empty spaces
     private void initializeBoard(){
@@ -42,6 +42,7 @@ public class Tic_Tac_Toe {
         Scanner scan = new Scanner(System.in);
 
         while(true){
+            System.out.println(player_turn+" turn");
             int row;
             int col;
             while(true){
@@ -133,6 +134,19 @@ public class Tic_Tac_Toe {
             }
         }
         return false;
+    }
+
+    private void playGame(){
+        while(true){
+            makeMove();
+            if(checkWin()){
+                System.out.println(player_turn+" symbol player is winner");
+                break;
+            }else if(checkTie()){
+                System.out.println("Its Tie Game");
+            }
+        }
+        
     }
 
     public static void main(String[] args) {
