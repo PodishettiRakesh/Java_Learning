@@ -93,7 +93,7 @@ public class Tic_Tac_Toe {
                     rowCheck++;
                 }
                 if(board[col][row]==player_turn){
-
+                    colCheck++;
                 }
             }
             if(rowCheck==SIZE){
@@ -137,6 +137,7 @@ public class Tic_Tac_Toe {
     }
 
     private void playGame(){
+        printBoard();
         while(true){
             makeMove();
             if(checkWin()){
@@ -144,13 +145,16 @@ public class Tic_Tac_Toe {
                 break;
             }else if(checkTie()){
                 System.out.println("Its Tie Game");
+                break;
             }
+            printBoard();
         }
         
     }
 
     public static void main(String[] args) {
         Tic_Tac_Toe ttt = new Tic_Tac_Toe();
+        ttt.playGame();
     }
 
 }
