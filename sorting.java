@@ -6,9 +6,9 @@ public class sorting {
         this.array=array;
     }
 
-    public sorting(){
-        this.array=array;
-    }
+    // public sorting(){
+    //     this.array=array;
+    // }
 
     private int linearSearch(int[] array,int num){
         for(int i=0;i<array.length;i++){
@@ -34,5 +34,13 @@ public class sorting {
             } 
         }
         return -1;
+    }
+
+    public static void main(String[] args) {
+        // sorting obj = new sorting();
+        int[] arr={1,2,3,4,5,6,7};
+        sorting sorted = new sorting(arr);
+        System.out.println(sorted.linearSearch(arr, 7));
+        System.out.println(sorted.binarySearch(arr, 4));
     }
 }
