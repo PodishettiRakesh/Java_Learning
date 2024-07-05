@@ -69,8 +69,9 @@ public class sorting {
 
             while(j>=0 && array[j]>value){
                 array[j+1]=array[j];
-                
+                j=j-1;
             }
+            array[j+1]=value;
         }
     }
 
@@ -79,7 +80,8 @@ public class sorting {
         int[] arr={1,2,3,4,5,6,7};
         sorting sorted = new sorting();
         sorted.printArray();
-        sorted.selectionSort();
+        // sorted.selectionSort();
+        
         sorted.printArray();
     }
 }
