@@ -59,7 +59,7 @@ public class sorting {
     }
 
     private void mergeSort(){
-
+        
     }
 
     private void insertionSort(){
@@ -81,7 +81,7 @@ public class sorting {
         sorting sorted = new sorting();
         sorted.printArray();
         // sorted.selectionSort();
-        
+        sorted.insertionSort();
         sorted.printArray();
     }
 }
