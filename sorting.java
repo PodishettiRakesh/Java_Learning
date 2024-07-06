@@ -59,21 +59,62 @@ public class sorting {
     }
 
     private void mergeSort(){
-        if(array==null || array.length<2){
+        if (array == null || array.length < 2) {
             return;
-        }else{
-            mergeSort(0,array.length-1);
         }
+        array = mergeSort(array);
     }
 
-    private void mergeSort(int start, int end){
-        if(start<end){
-            int mid=(start+end)/2;
-            mergeSort(start, mid);
-            mergeSort(mid+1,end);
-            merge(int start, int mid, int end);
+    private int[] mergeSort(int[] array) {
+        if (array.length < 2) {
+            return array;
         }
+
+        int mid = array.length / 2;
+        int[] leftArray = new int[mid];
+        int[] rightArray = new int[array.length - mid];
+
+        // System.arraycopy(array, 0, leftArray, 0, mid);
+        // System.arraycopy(array, mid, rightArray, 0, array.length - mid);
+
+        for (int i = 0; i < mid; i++) {
+            leftArray[i] = array[i];
+        }
+        for (int i = mid; i < array.length; i++) {
+            rightArray[i - mid] = array[i];
+        }
+
+        int[] leftSorted = mergeSort(leftArray);
+        int[] rightSorted = mergeSort(rightArray);
+
+        return merge(leftSorted, rightSorted);
     }
+
+    private int[] merge(int[] leftArray, int[] rightArray) {
+        int[] mergedArray = new int[leftArray.length + rightArray.length];
+        int i = 0, j = 0, k = 0;
+
+        while (i < leftArray.length && j < rightArray.length) {
+            if (leftArray[i] <= rightArray[j]) {
+                mergedArray[k++] = leftArray[i++];
+            } else {
+                mergedArray[k++] = rightArray[j++];
+            }
+        }
+
+        while (i < leftArray.length) {
+            mergedArray[k++] = leftArray[i++];
+        }
+
+        while (j < rightArray.length) {
+            mergedArray[k++] = rightArray[j++];
+        }
+
+        return mergedArray;
+    }
+
+
+
 
 
     private void insertionSort(){
