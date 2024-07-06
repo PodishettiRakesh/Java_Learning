@@ -131,12 +131,16 @@ public class sorting {
     }
 
     public static void main(String[] args) {
-        // sorting obj = new sorting();
-        int[] arr={1,2,3,4,5,6,7};
-        sorting sorted = new sorting();
-        sorted.printArray();
+        sorting obj = new sorting();
+        obj.printArray();
+        // int[] arr={1,2,3,4,5,6,7};
+        // sorting sorted = new sorting();
+        // sorted.printArray();
         // sorted.selectionSort();
-        sorted.insertionSort();
-        sorted.printArray();
+        // sorted.insertionSort();
+        // sorted.printArray();
+        obj.mergeSort();
+        obj.printArray();
+
     }
 }
