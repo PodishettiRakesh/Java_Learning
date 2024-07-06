@@ -59,8 +59,22 @@ public class sorting {
     }
 
     private void mergeSort(){
-        
+        if(array==null || array.length<2){
+            return;
+        }else{
+            mergeSort(0,array.length-1);
+        }
     }
+
+    private void mergeSort(int start, int end){
+        if(start<end){
+            int mid=(start+end)/2;
+            mergeSort(start, mid);
+            mergeSort(mid+1,end);
+            merge(int start, int mid, int end);
+        }
+    }
+
 
     private void insertionSort(){
         for(int i=1;i<array.length;i++){
