@@ -137,10 +137,11 @@ public class sorting {
         // sorting sorted = new sorting();
         // sorted.printArray();
         // sorted.selectionSort();
-        // sorted.insertionSort();
+        obj.insertionSort();
         // sorted.printArray();
         obj.mergeSort();
         obj.printArray();
-
     }
 }
+
+
