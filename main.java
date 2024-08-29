@@ -6,10 +6,15 @@ public class main {
         // System.out.println(str.substring(0,3));
         // System.out.println(Character.compare(str.charAt(0), str1.charAt(0)));
 
-        String str= "1234";
-        int num=Integer.parseInt(str);
-        System.out.println(num*2);
+        // String str= "1234";
+        // int num=Integer.parseInt(str);
+        // System.out.println(num*2);
 
+        int num=1234;
+        String str= String.valueOf(num);
+        str=str.concat(str);
+        num=Integer.parseInt(str);
+        System.out.println(num*2);
     }
     
 }
