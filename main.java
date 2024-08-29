@@ -10,11 +10,18 @@ public class main {
         // int num=Integer.parseInt(str);
         // System.out.println(num*2);
 
-        int num=1234;
-        String str= String.valueOf(num);
-        str=str.concat(str);
-        num=Integer.parseInt(str);
-        System.out.println(num*2);
+        // int num=1234;
+        // String str= String.valueOf(num);
+        // str=str.concat(str);
+        // num=Integer.parseInt(str);
+        // System.out.println(num*2);
+
+
+        int num=98765;
+        String str=String.valueOf(num);
+        for(int i=0; i<str.length(); i++){
+            System.out.println(str.charAt(i));
+        }
     }
     
 }
