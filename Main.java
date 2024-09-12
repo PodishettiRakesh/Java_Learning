@@ -1,14 +1,19 @@
+// Main.java
+
 // Abstract class Animal
-abstract class main {
+abstract class Animal {
     abstract void sound();  // Abstract method
 
     void eat() {            // Concrete method
         System.out.println("The Animal is eating");
     }
+    void drink(){
+        
+    }
 }
 
 // Dog class extends Animal
-class Dog extends main {
+class Dog extends Animal {
     @Override
     void sound() {
         System.out.println("Dog barks as bow bow");
@@ -16,18 +21,26 @@ class Dog extends main {
 }
 
 // Cat class extends Animal
-class Cat extends main {
+class Cat extends Animal {
     @Override
     void sound() {
         System.out.println("Cat meows");
     }
+
+    void drink(){
+        System.out.println("CAT Drinks milk every day");
+    }
+
+
 }
 
-// Main class (matches file name)
+// Public Main class (must match the file name)
 public class Main {
     public static void main(String[] args) {
-        // Correctly using the Animal reference for polymorphism
-        main dog = new Dog();
+        Animal dog = new Dog();
         dog.sound();  // Output: Dog barks as bow bow
+        dog.eat();
+        Animal cat = new Cat();
+        cat.drink();
     }
 }
