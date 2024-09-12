@@ -11,3 +11,10 @@ class Dog extends Animal{
         System.out.println("dog barks as bow bow");
     }
 }
+
+class Cat extends Animal{
+    void sound(){
+        System.out.println("cat meows");
+    }
+}
+
