@@ -12,5 +12,9 @@ class Dog implements Animal{
     }
 }
 public class Interfaces {
-    
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.sound();
+        dog.eat();
+    }
 }
