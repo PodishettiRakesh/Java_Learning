@@ -6,6 +6,11 @@ interface Animal{
     }
 }
 
+class Dog implements Animal{
+    public void sound(){
+        System.out.println("the dog barks");
+    }
+}
 public class Interfaces {
     
 }
