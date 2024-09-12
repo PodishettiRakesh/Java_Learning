@@ -24,17 +24,23 @@ public class main {
         // }
 
 
-        String s="89477873";
-        char c='8';
-        int count=0;
-        for(int i=0; i<s.length(); i++){
-            char d=s.charAt(i);
+    //     String s="89477873";
+    //     char c='8';
+    //     int count=0;
+    //     for(int i=0; i<s.length(); i++){
+    //         char d=s.charAt(i);
             
-            if(Character.compare(d, c)==0){
-                count++;
-            }
-        }
-        System.out.println(count);
+    //         if(Character.compare(d, c)==0){
+    //             count++;
+    //         }
+    //     }
+    //     System.out.println(count);
+
+    int n1=1221;
+    String num=String.valueOf(n1);
+    if(num.substring(num.length()-1, 0, -1)==n1){
+        
+    }
 
     }
     
